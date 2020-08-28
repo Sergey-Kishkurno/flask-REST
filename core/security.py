@@ -9,14 +9,14 @@ from core.models.user import UserModel
 # After we have added methods for finding to User class - there is no need for these mappings so far.
 
 def authenticate(username, password):
-    print ("autenticate() called!!!")
+    #print ("autenticate() called!!!")
     user = UserModel.find_by_username(username)
     # print (user)
     if user and safe_str_cmp(user.password, password):
         return user
 
 def identity(payload):
-    print ("identity() called!!!")
+    #print ("identity() called!!!")
     user_id = payload['identity']
     return UserModel.find_by_id(user_id)
 
