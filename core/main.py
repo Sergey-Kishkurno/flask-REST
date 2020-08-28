@@ -22,7 +22,7 @@ from core.resources.user import UserRegister
 from core.resources.item import Item, ItemList
 from core.resources.store import Store, StoreList
 
-from core.db import db
+from .db import db
 
 app = Flask (__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///data.db"
