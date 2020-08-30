@@ -12,6 +12,7 @@ https://www.udemy.com/course/rest-api-flask-and-python/
 
 
 """
+import os
 
 from flask import Flask
 from flask_restful import Api
@@ -24,7 +25,7 @@ from .resources.store import Store, StoreList
 
 
 app = Flask (__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///data.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get ("DATABASE_URL", "sqlite:///data.db") # Второй параметр - default
 app.config['SQLALCHEMY_TRAK_MODIFICATIONS'] = False
 app.secret_key = 'Sergey'
 api = Api(app)
