@@ -1,4 +1,5 @@
 .DS_Store
+_notes.md
 venv/
 __pycache__/
 *.pyc
